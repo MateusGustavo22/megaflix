@@ -14,7 +14,7 @@ export default function MovieSlider() {
   }, [])
 
   return (
-    <div ref={slider} className="max-w-full h-full mb-4 overflow-hidden p-1 pl-8 mb:pl-4 bg-black">
+    <div ref={slider} className="max-w-full h-full mb-4 overflow-hidden p-1 pl-8 mb:pl-4 bg-primary">
       <span className="text-white text-xl block mb-4 font-semibold">Em alta</span>
       <motion.div  drag="x" dragConstraints={{right: 0, left: -sliderWidth}} className="w-max h-max flex space-x-2">
         <MovieCard />

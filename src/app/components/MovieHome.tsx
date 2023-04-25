@@ -12,11 +12,10 @@ interface Props {
 export default function MovieHome(props:Props) {
 
   const bannerUrl = process.env.NEXT_PUBLIC_MOVIE_BANNER
-  console.log(bannerUrl+props.banner)
   
   return (
     <>
-      <div className="w-full h-max flex flex-row items-center mb:flex-col mb:mb-4 mb:from-[#fff0] mb:items-start bg-gradient-to-r from-black from-25% via-[#080808e8] via-40% to-[#ec000000] to-80% ">
+      <div className="w-full h-max flex flex-row items-center mb:flex-col mb:mb-4 mb:from-[#fff0] mb:items-start bg-gradient-to-r from-primary from-25% via-[#18191ef3] via-40% to-[#ec000000] to-80% ">
         <div className="w-full mb-4 max-h-[800px] flex justify-end">
           <div style={{backgroundImage: `url(${bannerUrl}${props.banner})`}} className="w-[1400px] h-full relative -z-10 pt-[56.25%] bg-[length:100%] bg-no-repeat bg-couver">
            

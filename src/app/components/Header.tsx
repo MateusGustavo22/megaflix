@@ -35,14 +35,14 @@ export default function Header() {
 	}
 
   return (
-    <div className="w-full h-16 pl-4 pr-4 relative bg-black">
+    <div className="w-full h-16 pl-4 pr-4 relative bg-primary">
 			<div className="max-w-[1920px] h-full relative m-auto flex items-center justify-between">
 				<a href='/' className="font-black text-3xl text-white">MegaFlix</a>
 					<div className="max-w-lg w-full lg:w-max justify-items-end h-16 flex items-center">
 						<div className='max-w-max h-full space-x-10 flex items-center'>
-							<a className="font-medium h-16 border-b-2 border-black hover:border-button flex items-center mb:hidden text-white text-mb cursor-pointer">Filmes</a>
-							<a className="font-medium h-16 border-b-2 border-black hover:border-button flex items-center mb:hidden text-white text-mb cursor-pointer">Series</a>
-							<a className="font-medium h-16 border-b-2 border-black hover:border-button flex items-center mb:hidden text-white text-mb cursor-pointer">Recentes</a>
+							<a className="font-medium h-16 border-b-2 border-primary hover:border-button flex items-center mb:hidden text-white text-mb cursor-pointer">Filmes</a>
+							<a className="font-medium h-16 border-b-2 border-primary hover:border-button flex items-center mb:hidden text-white text-mb cursor-pointer">Series</a>
+							<a className="font-medium h-16 border-b-2 border-primary hover:border-button flex items-center mb:hidden text-white text-mb cursor-pointer">Recentes</a>
 							<button onClick={showSearch} className='w-max h-max bg-blue-100 flex items-center justify-center'>
 									<BiSearch className={`text-white absolute ${serchIcon} hover:text-gray-400`} size={26} />
 									<AiOutlineClose className={`text-white absolute ${closeIcon} hover:text-gray-400 `} size={26}/>

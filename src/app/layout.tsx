@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className='bg-black'>
+      <body className='bg-primary'>
         <Header />
         <div className='max-w-[1920px] m-auto min-h-screen'>
         {children}
