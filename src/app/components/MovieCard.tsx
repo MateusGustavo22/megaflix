@@ -1,8 +1,15 @@
-export default function MovieCard() {
+interface Props {
+  name: string,
+  poster: string
+}
+
+export default function MovieCard({name, poster}:Props) {
+  const moviePostUrl = process.env.NEXT_PUBLIC_MOVIE_POSTER+poster
+
   return (
-    <div className="w-[220px] h-[320px] relative rounded-xl  border-4 border-primary hover:border-button hover:parent bg-[url('/spider.jpg')] bg-[length:100%_100%]">
+    <div style={{backgroundImage: `url(${moviePostUrl})`}} className="w-[220px] h-[320px] cursor-pointer relative rounded-xl  border-4 border-primary hover:border-button hover:parent bg-[length:100%_100%]">
       <div className="w-full h-full absolute flex items-end pb-2 rounded-xl hover:bg-gradient-to-t pl-2 from-primary to-[#00000050]">
-        <span className="text-white font-medium hidden max-w-[210px] child">Homem Aranha Sem Volta Para Casa</span>
+        <span className="text-white font-medium hidden max-w-[210px] child">{name}</span>
         <style>
           {`
             .hover\\:parent:hover .child {

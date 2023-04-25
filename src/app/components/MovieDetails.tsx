@@ -1,35 +1,59 @@
 "use client"
-import { type } from 'os'
 import { useState } from 'react'
 import { AiFillStar } from 'react-icons/ai'
 
 interface Props {
 	name: string,
 	sinopse: string,
-	genres: string,
+	genreIds: [],
 	vote: number
+}
+
+const genreNames = {
+	28: "Action",
+	12: "Adventure",
+	16: "Animation",
+	35: "Comedy",
+	80: "Crime",
+	99: "Documentary",
+	18: "Drama",
+	10751: "Family",
+	14:"Fantasy",
+	36: "History",
+	27: "Horror",
+	10402: "Music",
+	9648: "Mystery",
+	10749: "Romance",
+	878: "Science Fiction",
+	10770: "TV Movie",
+	53: "Thriller",
+	10752: "War",
+	37: "Western"
 }
 
 export default function MovieDetails(props:Props) {
 	//Formata a sinopse para não passar de 200 caracteres
 	const [sinopse, setSinopse] = useState(props.sinopse.length >= 200 ? props.sinopse.substring(0, 200) + ' . . .' : props.sinopse)
 
-	const genresList = props.genres.map(data => data.name)	
-	const genresTags = genresList.join(' | ')
+	//Formata os generos que é retornado por ids
+	const genreIdsList = props.genreIds
+	const genreNameList = genreIdsList.map(data => genreNames[data])
+	const genreTags = genreNameList.join(' | ')
 
+	//Controla a quantidade de estrelas que devem ser pintadas conforme a nota do filme
 	const movieNote = Math.round(props.vote)
-	const yellowStars = parseInt((movieNote / 2).toFixed(0))
+	const starCount = parseInt((movieNote / 2).toFixed(0))
 
-	const [starColors, setStarColors] = useState<string[]>(() => {
-		const newColors = []
+	const [starPlaceholder, setStarPlaceholder] = useState<string[]>(() => {
+		const fillStars = []
 		for (let i = 0; i < 5; i++) {
-			if (newColors.length >= yellowStars) {
-				newColors.push('text-gray-400')
+			if (fillStars.length >= starCount) {
+				fillStars.push('text-gray-400')
 			}else {
-				newColors.push('text-yellow-400')
+				fillStars.push('text-yellow-400')
 			}
 		}
-		return newColors
+		return fillStars
 	})
 
 	return (
@@ -43,15 +67,15 @@ export default function MovieDetails(props:Props) {
 				</div>
 				<div className="w-full h-full flex-row space-y-5">
 					<div className="w-max h-max flex">
-						<span className="text-sm text-white">{genresTags}</span>
+						<span className="text-sm text-white">{genreTags}</span>
 					</div>
 					<div className="w-max flex justify-between items-center h-max">
 						<div className="w-max h-max flex space-x-2">
-							<AiFillStar className={`${starColors[0]}`} size={20} />
-							<AiFillStar className={`${starColors[1]}`} size={20} />
-							<AiFillStar className={`${starColors[2]}`} size={20} />
-							<AiFillStar className={`${starColors[3]}`} size={20} />
-							<AiFillStar className={`${starColors[4]}`} size={20} />
+							<AiFillStar className={`${starPlaceholder[0]}`} size={20} />
+							<AiFillStar className={`${starPlaceholder[1]}`} size={20} />
+							<AiFillStar className={`${starPlaceholder[2]}`} size={20} />
+							<AiFillStar className={`${starPlaceholder[3]}`} size={20} />
+							<AiFillStar className={`${starPlaceholder[4]}`} size={20} />
 						</div>
 					</div>
 				</div>

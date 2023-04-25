@@ -3,7 +3,13 @@ import { useState, useEffect, useRef } from 'react'
 import MovieCard from "./MovieCard"
 import { motion } from 'framer-motion'
 
-export default function MovieSlider() {
+interface Props {
+  category: string,
+  trendingList: []
+}
+
+export default function MovieSlider({category, trendingList}:Props) {
+
   const slider = useRef<HTMLDivElement>(null)
   const [sliderWidth, setSliderWidth] = useState(0)
 
@@ -15,14 +21,11 @@ export default function MovieSlider() {
 
   return (
     <div ref={slider} className="max-w-full h-full mb-4 overflow-hidden p-1 pl-8 mb:pl-4 bg-primary">
-      <span className="text-white text-xl block mb-4 font-semibold">Em alta</span>
+      <span className="text-white text-xl block mb-4 font-semibold">{category}</span>
       <motion.div  drag="x" dragConstraints={{right: 0, left: -sliderWidth}} className="w-max h-max flex space-x-2">
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
+        {
+          trendingList.slice(0, 12).map(list => <MovieCard name={list.title} poster={list.poster_path} />)
+        }
       </motion.div>
     </div>
   )
