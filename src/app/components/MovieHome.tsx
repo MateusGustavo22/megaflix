@@ -1,26 +1,29 @@
 "use client"
-
 import MovieDetails from "./MovieDetails"
-import { useState, useEffect } from "react"
-import Image from "next/image"
 
-export default function MovieHome() {
-  /*const [mobileWidth, setWidth] = useState<number | null>(null)
+interface Props {
+  name: string,
+  sinopse: string,
+  banner: string,
+  vote: number,
+  genres: string
+}
 
-  useEffect(() => {
-    setWidth(window.innerWidth)
-  }, []) */
+export default function MovieHome(props:Props) {
 
+  const bannerUrl = process.env.NEXT_PUBLIC_MOVIE_BANNER
+  console.log(bannerUrl+props.banner)
+  
   return (
     <>
-      <div className="w-full h-max flex flex-row items-center mb:flex-col  mb:from-[#fff0] mb:items-start bg-gradient-to-r from-primary from-25% via-[#1e2030f5] via-40% to-[#ec000000] to-80% ... ">
+      <div className="w-full h-max flex flex-row items-center mb:flex-col mb:mb-4 mb:from-[#fff0] mb:items-start bg-gradient-to-r from-black from-25% via-[#080808e8] via-40% to-[#ec000000] to-80% ">
         <div className="w-full mb-4 max-h-[800px] flex justify-end">
-          <div className="w-[1400px] h-full relative -z-10 pt-[56.25%] bg-[length:100%] bg-no-repeat bg-couver bg-[url('/peakyblinder.jpg')]">
+          <div style={{backgroundImage: `url(${bannerUrl}${props.banner})`}} className="w-[1400px] h-full relative -z-10 pt-[56.25%] bg-[length:100%] bg-no-repeat bg-couver">
            
           </div>
         </div>
         <div className="absolute mb:relative">
-          <MovieDetails sinopse='O jornalista Eddie Brock desenvolve força e poder sobre-humanos quando seu corpo se funde com o alienígena Venom. Dominado pela raiva, Venom tenta controlar as novas e perigosas habilidades de Eddie.' />
+          <MovieDetails name={props.name} sinopse={props.sinopse} vote={props.vote} genres={props.genres}  />
         </div>
       </div>
     </>
