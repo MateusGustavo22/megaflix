@@ -33,7 +33,7 @@ module.exports = {
         // => @media (max-width: 639px) { ... }
       },
       backgroundImage: {
-        'blur': 'linear-gradient(to right, rgba(30, 32, 48, 1), rgba(30, 32, 48, 0.90), rgba(30, 32, 48, 0.50), rgba(30, 32, 48, 0), rgba(30, 32, 48, 0), rgba(18, 20, 39, 0))',
+        'banner-gradient': 'linear-gradient(to right, var(--primary) 25%, #1e2030f5 40%, #ec000000 80%)',
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
