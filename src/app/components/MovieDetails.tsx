@@ -22,6 +22,8 @@ const genreNames = {
 	36: "History",
 	27: "Horror",
 	10402: "Music",
+	10765: "Sci-Fi & Fantasy",
+	10759: "Action & Adventure",
 	9648: "Mystery",
 	10749: "Romance",
 	878: "Science Fiction",

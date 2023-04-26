@@ -8,7 +8,8 @@ interface Props {
   trendingList: []
 }
 
-export default function MovieSlider({category, trendingList}:Props) {
+export default function serieSlider({category, trendingList}:Props) {
+  
   const slider = useRef<HTMLDivElement>(null)
   const [sliderWidth, setSliderWidth] = useState(0)
 
@@ -23,7 +24,7 @@ export default function MovieSlider({category, trendingList}:Props) {
       <span className="text-white text-xl block mb-4 font-semibold">{category}</span>
       <motion.div  drag="x" dragConstraints={{right: 0, left: -sliderWidth}} className="w-max h-max flex space-x-2">
         {
-          trendingList.slice(0, 15).map(list => <MovieCard key={list.id} name={list.title} poster={list.poster_path} />)
+          trendingList.slice(0, 15).map(list => <MovieCard key={list.id} name={list.name} poster={list.poster_path} />)
         }
       </motion.div>
     </div>
