@@ -2,7 +2,6 @@ import { AiFillInstagram } from 'react-icons/ai'
 import { FaFacebookF } from 'react-icons/fa'
 import { BsTwitter } from 'react-icons/bs'
 
-
 export default function Footer() {
   return (
     <div className="w-full min-h-[200px] mt-32 p-16 flex flex-col space-y-4 items-center justify-center bg-black">

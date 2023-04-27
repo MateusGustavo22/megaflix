@@ -2,12 +2,14 @@
 import { BiSearch } from 'react-icons/bi'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 import MenuMobile from './MenuMoblie'
-import Search from './Search'
-import { useState, useEffect } from 'react'
+import Search from './Input'
+import { useEffect, useState } from 'react'
+import { useRouter, usePathname } from 'next/navigation'
 
 export default function Header() {
 
-	const [menuMobile, setMenuMobile] = useState('none')
+	const path = usePathname()
+	const [menuMobile, setMenuMobile] = useState<string>('none')
 
 	function showMenu() {
 		if (menuMobile == 'none') {
@@ -17,9 +19,35 @@ export default function Header() {
 		}
 	}
 
-	const [searchInput, setSearchInput] = useState('hidden')
-	const [serchIcon, setSearchIcon] = useState('block')
-	const [closeIcon, setCloseIcon] = useState('hidden')
+	const [searchInput, setSearchInput] = useState<string>('hidden')
+	const [serchIcon, setSearchIcon] = useState<string>('block')
+	const [closeIcon, setCloseIcon] = useState<string>('hidden')
+
+	const [inputSearch, setInputSearch] = useState<string>('')
+  const router = useRouter()
+   
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    if(!inputSearch) return;
+    {path === '/' || path.slice(0, 7) === '/filmes' ? router.push(`/search?q=${inputSearch}`) : router.push(`/series/search?q=${inputSearch}`)}
+		setSearchInput('hidden')
+		setCloseIcon('hidden')
+		setSearchIcon('block')
+  }
+
+  function handleIconClick(e: React.MouseEvent<HTMLDivElement>) {
+    e.preventDefault()
+    if(!inputSearch) return;
+    router.push(`/search?q=${inputSearch}`)
+		setSearchInput('hidden')
+		setCloseIcon('hidden')
+		setSearchIcon('block')
+  }
+
+	function handleInput(e: React.ChangeEvent<HTMLInputElement>):void {
+		console.log(e.target.value)
+		setInputSearch(e.target.value)
+	}
 
 	function showSearch() {
 		if (searchInput == 'hidden') {
@@ -32,10 +60,22 @@ export default function Header() {
 			setSearchInput('hidden')
 		}
 	} 
-	
+
+	useEffect(() => {	
+		function hideMenuMobile() {
+			if (menuMobile === 'block') {
+				setMenuMobile('none')
+			}
+		}
+		document.addEventListener('click', hideMenuMobile) 
+
+		return () => {
+			document.removeEventListener('click', hideMenuMobile)
+		}
+	}, [showMenu])
 
   return (
-    <div className="w-full h-16 pl-4 pr-4 relative bg-primary">
+    <div className="w-full h-16 pl-4 z-50 pr-4 sticky top-0 bg-primary">
 			<div className="max-w-[1920px] h-full relative m-auto flex items-center justify-between">
 				<a href='/' className="font-black text-3xl text-white">MegaFlix</a>
 					<div className="max-w-lg w-full lg:w-max justify-items-end h-16 flex items-center">
@@ -54,7 +94,7 @@ export default function Header() {
 						</div>
 				</div>
 				<div className={`max-w-[600px] w-full ${searchInput} absolute top-[66px] border-2 rounded-lg border-white mb:right-[-16px] right-0 h-max`}>
-					<Search />
+					<Search handleInput={handleInput} handleSubmit={handleSubmit} handleIconClick={handleIconClick} />
 				</div>
 			</div>
 			<MenuMobile display={menuMobile} />

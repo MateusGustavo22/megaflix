@@ -4,11 +4,11 @@ interface Props {
 
 export default function MenuMobile(props:Props) {
   return (
-    <div style={{display: props.display}} className="w-[200px] p-4 h-max absolute z-10 space-y-8 right-0 bg-[#313241]">
+    <div style={{display: props.display}} className="w-[200px] p-4 m-1 border-2 rounded-lg border-white h-max absolute z-10 space-y-8 right-0  bg-primary">
       <div className="flex flex-col">
         <span className="font-bold text-white text-lg">Filmes</span>
-        <a className="text-gray-300 border-transparent border-b-2 pt-1 pb-1  hover:border-button font-regular">Em alta</a>
-        <a className="text-gray-300 border-transparent border-b-2 pt-1 pb-1  hover:border-button font-regular">Recentes</a>
+        <a href='/' className="text-gray-300 border-transparent border-b-2 pt-1 pb-1  hover:border-button font-regular">Em alta</a>
+        <a className="text-gray-300 border-transparent border-b-2 pt-1 pb-1  hover:border-button font-regular">Milha l</a>
         <a className="text-gray-300 border-transparent border-b-2 pt-1 pb-1  hover:border-button font-regular">Melhores</a>
       </div>
       <div className="w-full b-1 b-gray-300 bg-gray-300"></div>

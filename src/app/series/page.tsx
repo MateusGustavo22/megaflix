@@ -26,9 +26,9 @@ export default async function Series() {
     poster: getTrendingSerie[0].poster,
     banner: getTrendingSerie[0].backdrop_path,
     vote: getTrendingSerie[0].vote_average,
-    genreIds: getTrendingSerie[0].genre_ids
+    date: getTrendingSerie[0].first_air_date,
+    id: getTrendingSerie[0].id
   }
-
 
   return (
     <>

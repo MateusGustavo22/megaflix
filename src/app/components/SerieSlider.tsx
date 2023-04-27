@@ -1,15 +1,20 @@
 "use client"
 import { useState, useEffect, useRef } from 'react'
-import MovieCard from "./MovieCard"
+import SerieCard from "./SerieCard"
 import { motion } from 'framer-motion'
+
+interface Serie {
+  name: string,
+  poster_path: string,
+  id: number
+}
 
 interface Props {
   category: string,
-  trendingList: []
+  trendingList: Serie[]
 }
 
-export default function serieSlider({category, trendingList}:Props) {
-  
+export default function SerieSlider({category, trendingList}:Props) {
   const slider = useRef<HTMLDivElement>(null)
   const [sliderWidth, setSliderWidth] = useState(0)
 
@@ -17,6 +22,7 @@ export default function serieSlider({category, trendingList}:Props) {
     if (slider.current) {
       setSliderWidth(slider.current?.scrollWidth - slider.current?.offsetWidth)
     }
+
   }, [])
 
   return (
@@ -24,7 +30,7 @@ export default function serieSlider({category, trendingList}:Props) {
       <span className="text-white text-xl block mb-4 font-semibold">{category}</span>
       <motion.div  drag="x" dragConstraints={{right: 0, left: -sliderWidth}} className="w-max h-max flex space-x-2">
         {
-          trendingList.slice(0, 15).map(list => <MovieCard key={list.id} name={list.name} poster={list.poster_path} />)
+          trendingList.slice(0, 15).map(list => <SerieCard key={list.id} id={list.id} name={list.name} poster={list.poster_path} />)
         }
       </motion.div>
     </div>

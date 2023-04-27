@@ -26,9 +26,9 @@ export default async function Home() {
     poster: getTrendingMovies[0].poster,
     banner: getTrendingMovies[0].backdrop_path,
     vote: getTrendingMovies[0].vote_average,
-    genreIds: getTrendingMovies[0].genre_ids
+    date: getTrendingMovies[0].release_date,
+    id: getTrendingMovies[0].id
   }
-
 
   return (
     <>
