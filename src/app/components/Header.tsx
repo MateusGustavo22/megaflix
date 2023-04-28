@@ -88,8 +88,8 @@ export default function Header() {
 									<AiOutlineClose className={`text-white absolute ${closeIcon} hover:text-gray-400 `} size={26}/>
 							</button> 
 						</div>
-						<button className="w-max pr-4 pl-4 pt-2 pb-2 ml-24 border-2 border-white hover:border-button text-right mb:hidden text-mb text-white font-regular">Entrar</button>
-						<div onClick={showMenu} className='p-1 hover:bg-[#31313b] hidden mb:block ml-8'>
+						<a href="/login" className="w-max pr-4 pl-4 pt-2 pb-2 ml-24 border-2 border-white hover:border-button text-right mb:hidden text-mb text-white font-regular">Entrar</a>
+						<div onClick={showMenu} className='p-1 hover:bg-[#31313b] hidden mb:flex ml-8'>
 							<AiOutlineMenu color='white' size={26} />
 						</div>
 				</div>

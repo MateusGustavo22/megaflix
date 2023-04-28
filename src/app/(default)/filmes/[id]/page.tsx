@@ -11,7 +11,7 @@ interface Props {
 export default async function Movie({params}: Props) {
   const apiKey = process.env.NEXT_PUBLIC_API_KEY
   const movieDetailsUrl = `${process.env.NEXT_PUBLIC_MOVIE_DETAILS}${params.id}?api_key=${apiKey}`
-  const moviesSimilarUrl = `${process.env.NEXT_PUBLIC_MOVIE_DETAILS}${params.id}/similar?api_key=${apiKey}`
+  const moviesPopular = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`
 
   async function getMovieDetails(url:string) {
     const response = await fetch(movieDetailsUrl)
@@ -26,7 +26,7 @@ export default async function Movie({params}: Props) {
   }
 
   const movieData = await getMovieDetails(movieDetailsUrl)
-  const similarMovieData = await getSilimarMovies(moviesSimilarUrl)
+  const similarMovieData = await getSilimarMovies(moviesPopular)
 
   const movieInfos = {
     name: movieData.title,

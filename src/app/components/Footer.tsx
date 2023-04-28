@@ -5,7 +5,7 @@ import { BsTwitter } from 'react-icons/bs'
 export default function Footer() {
   return (
     <div className="w-full min-h-[200px] mt-32 p-16 flex flex-col space-y-4 items-center justify-center bg-black">
-      <div className='w-max h-max flex items-center justify-center mb-8 space-x-4'>
+      <div className='w-max h-max flex items-center justify-center mb-4 space-x-4'>
           <div className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center">
             <FaFacebookF color="black" size={26} />
           </div>

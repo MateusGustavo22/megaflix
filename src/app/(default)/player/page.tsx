@@ -14,9 +14,22 @@ export default function Player() {
       const response = await fetch(url)
       const data = await response.json()
       const movieVideos = data.results
-      setVideoKey(movieVideos[0].key)
+      return movieVideos
     }
-    fethVideo(urlVideo)
+
+    async function filterVideo() {
+      const videosOptions = await fethVideo(urlVideo)
+    
+      for (let i = 0; i < videosOptions.length; i++) {
+        console.log(videosOptions[i].type)
+        if (videosOptions[i].type === 'Trailer') {
+          setVideoKey(videosOptions[i].key)
+          break
+        }
+      }
+    }
+
+    filterVideo()
 
   }, [])
 
@@ -27,9 +40,8 @@ export default function Player() {
         height="630"
         src={`https://www.youtube.com/embed/${videoKey}`}
         title="YouTube video player" 
-        frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        allowfullscreen>
+      >
       </iframe>
     </div>
   )

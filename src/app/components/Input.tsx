@@ -1,6 +1,3 @@
-"use client"
-import { useRouter } from 'next/navigation'
-import { useState } from 'react'
 import { BiSearch } from 'react-icons/bi'
 
 interface PropsFunc {

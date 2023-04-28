@@ -1,6 +1,6 @@
 "use client"
 import { useSearchParams } from 'next/navigation';
-import MovieCard from '../components/MovieCard';
+import MovieCard from '@/app/components/MovieCard';
 
 interface Search {
   title: string,

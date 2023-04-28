@@ -1,5 +1,5 @@
-import MovieHome from "./components/MovieHome"
-import MovieSlider from "./components/MovieSlider"
+import MovieHome from "../components/MovieHome"
+import MovieSlider from "../components/MovieSlider"
 
 async function fetchMovie(url:string) {
   const response = await fetch(url)
