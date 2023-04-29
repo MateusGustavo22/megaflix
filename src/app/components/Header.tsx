@@ -5,6 +5,7 @@ import MenuMobile from './MenuMoblie'
 import Search from './Input'
 import { useEffect, useState } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
+import { BsDisplay } from 'react-icons/bs'
 
 export default function Header() {
 
@@ -12,7 +13,7 @@ export default function Header() {
 	const [menuMobile, setMenuMobile] = useState<string>('none')
 
 	function showMenu() {
-		if (menuMobile == 'none') {
+		if (menuMobile === 'none') {
 			setMenuMobile('block')
 		}else {
 			setMenuMobile('none')
@@ -89,7 +90,7 @@ export default function Header() {
 							</button> 
 						</div>
 						<a href="/login" className="w-max pr-4 pl-4 pt-2 pb-2 ml-24 border-2 border-white hover:border-button text-right mb:hidden text-mb text-white font-regular">Entrar</a>
-						<div onClick={showMenu} className='p-1 hover:bg-[#31313b] hidden mb:flex ml-8'>
+						<div onClick={showMenu} className="w-max h-max ml-8 flex mb2:hidden">
 							<AiOutlineMenu color='white' size={26} />
 						</div>
 				</div>

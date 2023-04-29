@@ -1,5 +1,5 @@
-import MovieHome from "../components/MovieHome"
-import MovieSlider from "../components/MovieSlider"
+import MovieHome from "./components/MovieHome"
+import MovieSlider from "./components/MovieSlider"
 
 async function fetchMovie(url:string) {
   const response = await fetch(url)
@@ -14,20 +14,19 @@ export default async function Home() {
   const fictionMoviesUrl = `${process.env.NEXT_PUBLIC_MOVIE_GENRE}?api_key=${apiKey}&with_genres=${878}&page=2`
   const horrorMoviesUrl = `${process.env.NEXT_PUBLIC_MOVIE_GENRE}?api_key=${apiKey}&with_genres=${27}`
  
- 
   const getTrendingMovies = await fetchMovie(trendingMoviesUrl)
   const getFictionMovies = await fetchMovie(fictionMoviesUrl)
   const getActionMovies = await fetchMovie(actionMoviesUrl)
   const getHorrorMovies = await fetchMovie(horrorMoviesUrl)
 
   const mainMovie = {
-    name: getTrendingMovies[0].title,
-    sinopse: getTrendingMovies[0].overview,
-    poster: getTrendingMovies[0].poster,
-    banner: getTrendingMovies[0].backdrop_path,
-    vote: getTrendingMovies[0].vote_average,
-    date: getTrendingMovies[0].release_date,
-    id: getTrendingMovies[0].id
+    name: getTrendingMovies[4].title,
+    sinopse: getTrendingMovies[4].overview,
+    poster: getTrendingMovies[4].poster,
+    banner: getTrendingMovies[4].backdrop_path,
+    vote: getTrendingMovies[4].vote_average,
+    date: getTrendingMovies[4].release_date,
+    id: getTrendingMovies[4].id
   }
 
   return (

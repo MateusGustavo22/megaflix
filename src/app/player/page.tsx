@@ -1,13 +1,15 @@
 "use client"
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 export default function Player() {
-  const [videoKey, setVideoKey] = useState(null)
+
+  const path = usePathname()
   const searchParams = useSearchParams();
+  const [videoKey, setVideoKey] = useState(null)
   const movieId = searchParams.get('id')
 
-  const urlVideo = `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
+  const urlMovieVideo = `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
 
   useEffect(() => {
     const fethVideo = async (url:string) => {
@@ -18,10 +20,9 @@ export default function Player() {
     }
 
     async function filterVideo() {
-      const videosOptions = await fethVideo(urlVideo)
+      const videosOptions = await fethVideo(urlMovieVideo)
     
       for (let i = 0; i < videosOptions.length; i++) {
-        console.log(videosOptions[i].type)
         if (videosOptions[i].type === 'Trailer') {
           setVideoKey(videosOptions[i].key)
           break

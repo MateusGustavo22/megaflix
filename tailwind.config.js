@@ -3,7 +3,7 @@ module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,ts,jsx,tsx}',
-    './src/app/**/*.{js,ts,jsx,tsx}',
+    './src/app/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
     extend: {
@@ -26,6 +26,7 @@ module.exports = {
         'lg': {'max': '1023px'},
         // => @media (max-width: 1023px) { ... }
         'mb': {'max': '920px'},
+        'mb2': {'min': '920px'},
   
         'md': {'max': '767px'},
         // => @media (max-width: 767px) { ... }
