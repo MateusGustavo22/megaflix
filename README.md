@@ -10,6 +10,10 @@ O site foi hospedado na vercel: https://megaflix-gamma.vercel.app/
 
 ![screenshot](https://github.com/MateusGustavo22/megaflix/blob/main/public/screenshot/Captura%20de%20tela%20de%202023-04-30%2015-23-12.png)
 
+## API KEY
+
+Antes de executar, é preciso acessar o site https://developers.themoviedb.org/3 e criar uma chave. Após criar sua chave, adicione-a no espaço reservado no arquivo .env localizado na raiz do projeto. Depois, é só seguir os passos abaixo.
+
 ## Getting Started
 
 First, run the development server:
