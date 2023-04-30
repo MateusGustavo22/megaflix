@@ -5,11 +5,10 @@ O megaflix é um prjeto front end de um streaming de filmes e series. As tecnolo
 O site foi hospedado na vercel: https://megaflix-gamma.vercel.app/
 
 ![Screenshot](https://github.com/MateusGustavo22/megaflix/blob/main/public/screenshot/Captura%20de%20tela%20de%202023-04-30%2014-51-32.png).
-This is a [Next.js]
-
-![screenshot](https://github.com/MateusGustavo22/megaflix/blob/main/public/screenshot/Captura%20de%20tela%20de%202023-04-30%2015-22-51.png)
 
 ![screenshot](https://github.com/MateusGustavo22/megaflix/blob/main/public/screenshot/Captura%20de%20tela%20de%202023-04-30%2015-22-28.png)
+
+![screenshot](https://github.com/MateusGustavo22/megaflix/blob/main/public/screenshot/Captura%20de%20tela%20de%202023-04-30%2015-23-12.png)
 
 ## Getting Started
 
