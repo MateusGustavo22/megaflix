@@ -2,7 +2,7 @@
 
 O megaflix é um prjeto front end de um streaming de filmes e series. As tecnologias utilizadas foram: Typescript, React, Tailwind junto com a API do TMDB para consultar dados dos filmes com fetch.
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://github.com/MateusGustavo22/megaflix/blob/main/public/screenshot/Captura%20de%20tela%20de%202023-04-30%2014-51-32.png).
 
 ## Getting Started
 
