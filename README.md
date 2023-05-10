@@ -1,6 +1,6 @@
 ## Sobre o projeto
 
-O megaflix é um prjeto front end de um streaming de filmes e series. As tecnologias utilizadas foram: Typescript, React, Tailwind junto com a API do TMDB para consultar dados dos filmes com fetch.
+O megaflix é um projeto front end de um streaming de filmes e series. As tecnologias utilizadas foram: Typescript, React, Tailwind junto com a API do TMDB para consultar dados dos filmes com fetch.
 
 O site foi hospedado na vercel: https://megaflix-gamma.vercel.app/
 
