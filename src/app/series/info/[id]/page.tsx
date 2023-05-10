@@ -5,22 +5,22 @@ interface Props {
   params: {
     id: string
   }
-    
+
 }
 
-export default async function Serie({params}: Props) {
+export default async function Serie({ params }: Props) {
   const apiKey = process.env.NEXT_PUBLIC_API_KEY
   const serieDetailsUrl = `${process.env.NEXT_PUBLIC_SERIE_DETAILS}${params.id}?api_key=${apiKey}`
   const seriesSimilarUrl = `${process.env.NEXT_PUBLIC_SERIE_DETAILS}${params.id}/similar?api_key=${apiKey}`
 
-  async function getSerieDetails(url:string) {
+  async function getSerieDetails(url: string) {
     const response = await fetch(serieDetailsUrl)
     const movieDetails = await response.json()
     return movieDetails
   }
-  
-  async function getSilimarSeries(url:string) {
-    const response  = await fetch(url)
+
+  async function getSilimarSeries(url: string) {
+    const response = await fetch(url)
     const similarMovies = await response.json()
     return similarMovies.results
   }
@@ -40,8 +40,8 @@ export default async function Serie({params}: Props) {
 
   return (
     <>
-     <MovieHome mainMovie={serieInfos} />
-     <SerieSlider category="Mais series" trendingList={similarSerieData} />
+      <MovieHome mainMovie={serieInfos} />
+      <SerieSlider category="Mais series" trendingList={similarSerieData} />
     </>
   )
 }

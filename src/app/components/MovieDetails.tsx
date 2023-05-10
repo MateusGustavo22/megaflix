@@ -1,7 +1,7 @@
 "use client"
 import { useState } from 'react'
 import { AiFillStar } from 'react-icons/ai'
-import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 interface Props {
 	name: string,
@@ -31,12 +31,6 @@ export default function MovieDetails(props:Props) {
 		return fillStars
 	})
 
-	const router = useRouter()
-
-	function pagePush() {
-		router.push(`/player?id=${props.id}`)
-	}
-
 	return (
 		<div className="max-w-[600px] flex-row pl-8 pr-4 mb:pl-4 z-5">
 			<div className="w-full flex-row space-y-8 ">
@@ -60,7 +54,7 @@ export default function MovieDetails(props:Props) {
 						</div>
 					</div>
 				</div>
-				<button onClick={pagePush} className="max-w-xs w-full h-16 mb:max-w-full rounded-md font-bold text-lg hover:shadow-blueShadow hover:shadow-3xl text-white bg-button">Assistir Agora</button>
+				<Link className="mt-4 mb-4 block" href={`/player?id=${props.id}`}><button  className="max-w-xs w-full h-16 mb:max-w-full rounded-md font-bold text-lg hover:shadow-blueShadow hover:shadow-3xl text-white bg-button">Assistir Agora</button></Link>
 			</div>
 		</div>
 	)

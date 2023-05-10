@@ -1,7 +1,7 @@
 import MovieHome from "@/app/components/MovieHome"
 import SerieSlider from "@/app/components/SerieSlider"
 
-async function fetchMovie(url:string) {
+async function fetchMovie(url: string) {
   const response = await fetch(url)
   const data = await response.json()
   return data.results
@@ -18,7 +18,7 @@ export default async function Series() {
   const getActionSerie = await fetchMovie(actionSerieUrl)
   const getCrimeSerie = await fetchMovie(crimeSerieUrl)
   const getLatestSerie = await fetchMovie(latestUrl)
-  
+
 
   const mainMovie = {
     name: getTrendingSerie[0].original_name,
@@ -32,11 +32,11 @@ export default async function Series() {
 
   return (
     <>
-      <MovieHome mainMovie={mainMovie} /> 
+      <MovieHome mainMovie={mainMovie} />
       <SerieSlider category="Em alta" trendingList={getTrendingSerie} />
-      <SerieSlider category="Ação" trendingList={getActionSerie} /> 
-      <SerieSlider category="Crime" trendingList={getCrimeSerie} /> 
-      <SerieSlider category="Mais bem avaliadas" trendingList={getLatestSerie} /> 
+      <SerieSlider category="Ação" trendingList={getActionSerie} />
+      <SerieSlider category="Crime" trendingList={getCrimeSerie} />
+      <SerieSlider category="Mais bem avaliadas" trendingList={getLatestSerie} />
     </>
   )
 }

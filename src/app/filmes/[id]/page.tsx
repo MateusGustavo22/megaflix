@@ -36,7 +36,6 @@ export default async function Movie({params}: Props) {
     vote: movieData.vote_average,
     date: movieData.release_date,
     id: movieData.id
-
   }
 
   return (

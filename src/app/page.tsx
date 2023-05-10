@@ -1,7 +1,7 @@
 import MovieHome from "./components/MovieHome"
 import MovieSlider from "./components/MovieSlider"
 
-async function fetchMovie(url:string) {
+async function fetchMovie(url: string) {
   const response = await fetch(url)
   const data = await response.json()
   return data.results
@@ -13,7 +13,7 @@ export default async function Home() {
   const actionMoviesUrl = `${process.env.NEXT_PUBLIC_MOVIE_GENRE}?api_key=${apiKey}&with_genres=${28}&page=2`
   const fictionMoviesUrl = `${process.env.NEXT_PUBLIC_MOVIE_GENRE}?api_key=${apiKey}&with_genres=${878}&page=2`
   const horrorMoviesUrl = `${process.env.NEXT_PUBLIC_MOVIE_GENRE}?api_key=${apiKey}&with_genres=${27}`
- 
+
   const getTrendingMovies = await fetchMovie(trendingMoviesUrl)
   const getFictionMovies = await fetchMovie(fictionMoviesUrl)
   const getActionMovies = await fetchMovie(actionMoviesUrl)
@@ -31,7 +31,7 @@ export default async function Home() {
 
   return (
     <>
-      <MovieHome mainMovie={mainMovie} /> 
+      <MovieHome mainMovie={mainMovie} />
       <MovieSlider category="Em alta" trendingList={getTrendingMovies} />
       <MovieSlider category="Ação" trendingList={getActionMovies} />
       <MovieSlider category="Ficção cientifíca" trendingList={getFictionMovies} />

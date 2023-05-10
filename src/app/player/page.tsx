@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 
 export default function Player() {
 
-  const path = usePathname()
   const searchParams = useSearchParams();
   const [videoKey, setVideoKey] = useState(null)
   const movieId = searchParams.get('id')
@@ -12,7 +11,7 @@ export default function Player() {
   const urlMovieVideo = `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
 
   useEffect(() => {
-    const fethVideo = async (url:string) => {
+    const fethVideo = async (url: string) => {
       const response = await fetch(url)
       const data = await response.json()
       const movieVideos = data.results
@@ -21,7 +20,7 @@ export default function Player() {
 
     async function filterVideo() {
       const videosOptions = await fethVideo(urlMovieVideo)
-    
+
       for (let i = 0; i < videosOptions.length; i++) {
         if (videosOptions[i].type === 'Trailer') {
           setVideoKey(videosOptions[i].key)
@@ -40,8 +39,8 @@ export default function Player() {
         width="1120"
         height="630"
         src={`https://www.youtube.com/embed/${videoKey}`}
-        title="YouTube video player" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       >
       </iframe>
     </div>

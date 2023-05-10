@@ -17,7 +17,7 @@ export default function RootLayout({
       <body className='bg-primary'>
         <Header />
         <div className='max-w-[1920px] m-auto min-h-screen'>
-        {children}
+          {children}
         </div>
         <Footer />
       </body>
