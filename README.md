@@ -5,9 +5,9 @@ Confira o projeto clicando [aqui](https://megaflix-gamma.vercel.app/).
 
 ## Capturas de tela do projeto
 
-![Screenshot](https://github.com/MateusGustavo22/megaflix/blob/main/public/screenshot/print01.png)
-
 ![Screenshot](https://github.com/MateusGustavo22/megaflix/blob/main/public/screenshot/print02.png)
+
+![Screenshot](https://github.com/MateusGustavo22/megaflix/blob/main/public/screenshot/print01.png)
 
 ![Screenshot](https://github.com/MateusGustavo22/megaflix/blob/main/public/screenshot/mobile01.png)
 
