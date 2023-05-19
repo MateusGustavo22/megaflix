@@ -1,8 +1,6 @@
 ## Megaflix
 Este é um projeto de front-end de um serviço de streaming de filmes e séries chamado Megaflix. O aplicativo apresenta seções de categorias, como ação, ficção científica e outros gêneros populares, com uma navegação suave usando um scroll horizontal. Ele também possui um sistema de busca para pesquisar filmes e séries, utilizando a API do [TMDB](https://developer.themoviedb.org/docs).
 
-Confira o projeto clicando [aqui](https://megaflix-gamma.vercel.app/).
-
 ## Capturas de tela do projeto
 
 ![Screenshot](https://github.com/MateusGustavo22/megaflix/blob/main/public/screenshot/print02.png)
