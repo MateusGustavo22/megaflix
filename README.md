@@ -1,29 +1,39 @@
-## Sobre o projeto
+## Megaflix
+Este é um projeto de front-end de um serviço de streaming de filmes e séries chamado Megaflix. O aplicativo apresenta seções de categorias, como ação, ficção científica e outros gêneros populares, com uma navegação suave usando um scroll horizontal. Ele também possui um sistema de busca para pesquisar filmes e séries, utilizando a API do [TMDB](https://developer.themoviedb.org/docs).
 
-O Megaflix é um projeto de front-end de streaming de filmes e séries que utiliza Typescript, React e Tailwind, juntamente com a API do TMDB.
+Confira o projeto clicando [aqui](https://megaflix-gamma.vercel.app/).
 
-Você pode acessar em: https://megaflix-gamma.vercel.app/
+## Capturas de tela do projeto
 
-![Screenshot](https://github.com/MateusGustavo22/megaflix/blob/main/public/screenshot/Captura%20de%20tela%20de%202023-04-30%2014-51-32.png).
+![Screenshot]()
+![Screenshot]()
+![Screenshot]()
+![Screenshot]()
 
-![screenshot](https://github.com/MateusGustavo22/megaflix/blob/main/public/screenshot/Captura%20de%20tela%20de%202023-04-30%2015-22-28.png)
+## Executando o projeto em sua máquina
 
-![screenshot](https://github.com/MateusGustavo22/megaflix/blob/main/public/screenshot/Captura%20de%20tela%20de%202023-04-30%2015-23-12.png)
-
-## API KEY
-
-Antes de executar, é preciso acessar o site https://developers.themoviedb.org/3 e criar uma chave. Após criar sua chave, adicione-a no espaço reservado no arquivo .env localizado na raiz do projeto. Depois, é só seguir os passos abaixo.
-
-## Getting Started
-
-First, run the development server:
-
+Clone o projeto
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+git clone https://github.com/MateusGustavo22/megaflix.git
+```
+Configure sua chave de API
+1. Acesse o site do TMDB clicando [aqui](https://developer.themoviedb.org/docs) e criei uma chave.
+2. Cole sua chave no arquivo `.env` no espaço reservado:
+```javascript
+NEXT_PUBLIC_API_KEY= <<API KEY>>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Instale as depedências
+```bash
+# Com yarn
+yarn install
+# Ou com npm
+npm install
+```
+Execulte o projeto
+```bash
+yarn dev
+# Ou
+npm run dev
+```
+Depois acesse [https://localhost:3000](https://localhost:3000)

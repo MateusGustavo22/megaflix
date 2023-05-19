@@ -1,32 +1,31 @@
-import MovieHome from "@/app/components/MovieHome"
-import MovieSlider from "@/app/components/MovieSlider"
+import MovieHome from "@/app/components/MovieHome";
+import MovieSlider from "@/app/components/MovieSlider";
 
 interface Props {
   params: {
-    id: string
-  }
-    
+    id: string;
+  };
 }
 
-export default async function Movie({params}: Props) {
-  const apiKey = process.env.NEXT_PUBLIC_API_KEY
-  const movieDetailsUrl = `${process.env.NEXT_PUBLIC_MOVIE_DETAILS}${params.id}?api_key=${apiKey}`
-  const moviesPopular = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`
+export default async function Movie({ params }: Props) {
+  const apiKey = process.env.NEXT_PUBLIC_API_KEY;
+  const movieDetailsUrl = `${process.env.NEXT_PUBLIC_MOVIE_DETAILS}${params.id}?api_key=${apiKey}`;
+  const moviesPopular = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`;
 
-  async function getMovieDetails(url:string) {
-    const response = await fetch(movieDetailsUrl)
-    const movieDetails = await response.json()
-    return movieDetails
-  }
-  
-  async function getSilimarMovies(url:string) {
-    const response  = await fetch(url)
-    const similarMovies = await response.json()
-    return similarMovies.results
+  async function getMovieDetails(url: string) {
+    const response = await fetch(movieDetailsUrl);
+    const movieDetails = await response.json();
+    return movieDetails;
   }
 
-  const movieData = await getMovieDetails(movieDetailsUrl)
-  const similarMovieData = await getSilimarMovies(moviesPopular)
+  async function getSilimarMovies(url: string) {
+    const response = await fetch(url);
+    const similarMovies = await response.json();
+    return similarMovies.results;
+  }
+
+  const movieData = await getMovieDetails(movieDetailsUrl);
+  const similarMovieData = await getSilimarMovies(moviesPopular);
 
   const movieInfos = {
     name: movieData.title,
@@ -36,12 +35,15 @@ export default async function Movie({params}: Props) {
     vote: movieData.vote_average,
     date: movieData.release_date,
     id: movieData.id
-  }
+  };
 
   return (
     <>
       <MovieHome mainMovie={movieInfos} />
-      <MovieSlider category="Você pode gostar" trendingList={similarMovieData} />
+      <MovieSlider
+        category="Você pode gostar"
+        trendingList={similarMovieData}
+      />
     </>
-  )
+  );
 }
