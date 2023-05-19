@@ -9,9 +9,10 @@ Confira o projeto clicando [aqui](https://megaflix-gamma.vercel.app/).
 
 ![Screenshot](https://github.com/MateusGustavo22/megaflix/blob/main/public/screenshot/print01.png)
 
-![Screenshot](https://github.com/MateusGustavo22/megaflix/blob/main/public/screenshot/mobile01.png)
-
-![Screenshot](https://github.com/MateusGustavo22/megaflix/blob/main/public/screenshot/mobile02.png)
+<div float="left">
+  <img src="https://github.com/MateusGustavo22/megaflix/blob/main/public/screenshot/mobile01.png" alt="Imagem 1" width="400" />
+  <img src="https://github.com/MateusGustavo22/megaflix/blob/main/public/screenshot/mobile02.png" alt="Imagem 2" width="400" />
+</div>
 
 ## Executando o projeto em sua máquina
 
